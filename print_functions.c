@@ -8,7 +8,10 @@ int print_string(va_list arg)
 {
 	int i;
 	char *src = va_arg(arg, char *);
-
+	if (!src)
+	{
+		src = "(null)";
+	}
 	for (i = 0; src && src[i]; i++)
 		_putchar(src[i]);
 	return (i);
