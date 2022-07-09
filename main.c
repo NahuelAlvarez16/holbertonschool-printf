@@ -1,11 +1,12 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * main - check te code
  * Return: Always 0
  */
 int main(void)
 {
-	_printf("%D");
+	printf("LENGTH: %d",_printf("%D"));
 	return (0);
 
 }
