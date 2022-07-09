@@ -9,12 +9,11 @@ int (*get_print_function(char format))(va_list)
 	format_t formats[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'%', print_percentage}
 	};
 	int i;
 
 	i = 0;
-	while (i < 3)
+	while (i < 2)
 	{
 		if (formats[i].format == format)
 			return (formats[i].print_function);
@@ -33,8 +32,8 @@ int _printf(const char *format, ...)
 	int length = 0;
 	int (*print_function)(va_list);
 	va_list arg;
-	
-	if(!format)
+
+	if (!format)
 		return (-1);
 	va_start(arg, 0);
 	for (i = 0; format && format[i]; i++)
@@ -45,14 +44,14 @@ int _printf(const char *format, ...)
 			print_function = get_print_function(format[i]);
 			if (print_function)
 				length += print_function(arg);
-			else if(format[i])
+			else if (format[i])
 			{
 				_putchar('%');
 				_putchar(format[i]);
 				length += 2;
 			}
 			else
-				length = -1;
+				return (-1);
 
 		}
 		else

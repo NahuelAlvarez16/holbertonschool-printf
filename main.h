@@ -10,6 +10,5 @@ typedef struct format
 int _putchar(char c);
 int print_string(va_list arg);
 int print_char(va_list arg);
-int print_percentage();
 int _printf(const char *format, ...);
 #endif
