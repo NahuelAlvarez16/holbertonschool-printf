@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	_printf("This is before the %s %c this %c %s %% %% %% after\n", "HOLAAAAA" , 'd', 'D',"CACA" );
+	_printf("%D");
 	return (0);
 
 }

@@ -9,7 +9,7 @@ int (*get_print_function(char format))(va_list)
 	format_t formats[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'%', print_percentage},
+		{'%', print_percentage}
 	};
 	int i;
 
@@ -31,15 +31,23 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int length = 0;
+	int (*print_function)(va_list);
 	va_list arg;
-
+	
 	va_start(arg, 0);
 	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			length += get_print_function(format[i])(arg);
+			print_function = get_print_function(format[i]);
+			if (print_function)
+				length += print_function(arg);
+			else if(format[i])
+			{
+				_putchar('%');
+				_putchar(format[i]);
+			}
 		}
 		else
 		{
