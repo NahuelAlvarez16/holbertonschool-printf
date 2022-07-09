@@ -34,6 +34,8 @@ int _printf(const char *format, ...)
 	int (*print_function)(va_list);
 	va_list arg;
 	
+	if(!format)
+		return (-1);
 	va_start(arg, 0);
 	for (i = 0; format && format[i]; i++)
 	{
