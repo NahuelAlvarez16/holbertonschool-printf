@@ -30,6 +30,7 @@ int (*get_print_function(char format))(va_list)
 int _printf(const char *format, ...)
 {
 	int i;
+	int length = 0;
 	va_list arg;
 
 	va_start(arg, 0);
@@ -38,9 +39,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			get_print_function(format[i])(arg);
+			length += get_print_function(format[i])(arg);
 		}
 		else
+		{
+			length++;
 			_putchar(format[i]);
+		}
 	}
+	va_end(arg);
+	return (length);
 }
