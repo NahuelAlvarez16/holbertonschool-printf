@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_string - print all characters of arg variable
- * @arg: is a string
+ * @arg:  string
  * Return: return length of arg variable
  */
 int print_string(va_list arg)
@@ -36,7 +36,13 @@ int print_number_recursion(int s)
 
 	if (s / 10)
 	{
-		i = print_number_recursion(s / 10);
+		if (s < 0)
+		{
+			_putchar('-');
+			i++;
+			s = -(s);
+		}
+		i += print_number_recursion(s / 10);
 		_putchar(s % 10 + '0');
 		return (i + 1);
 	}
