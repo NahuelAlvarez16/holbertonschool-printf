@@ -18,10 +18,37 @@ int print_string(va_list arg)
 /**
  * print_char - print a char
  * @arg: is a char
- * Return: return 1
+ * Return: 1
  */
 int print_char(va_list arg)
 {
 	_putchar(va_arg(arg, int));
 	return (1);
+}
+/**
+ * print_number_recursion - print nu,ber
+ * @s: int
+ * Return: length
+ */
+int print_number_recursion(int s)
+{
+	int i = 0;
+
+	if (s / 10)
+	{
+		i = print_number_recursion(s / 10);
+		_putchar(s % 10 + '0');
+		return (i + 1);
+	}
+	_putchar(s % 10 + '0');
+	return (1);
+}
+/**
+ * print_integer - prints an integer
+ * @arg: arguments
+ * Return: an integer
+ */
+int print_integer(va_list arg)
+{
+	return (print_number_recursion(va_arg(arg, int)));
 }

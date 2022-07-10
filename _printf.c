@@ -9,11 +9,13 @@ int (*get_print_function(char format))(va_list)
 	format_t formats[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'d', print_integer},
+		{'i', print_integer},
 	};
 	int i;
 
 	i = 0;
-	while (i < 2)
+	while (i < 4)
 	{
 		if (formats[i].format == format)
 			return (formats[i].print_function);
