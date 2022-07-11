@@ -58,5 +58,5 @@ int print_integer(va_list arg)
 {
 	int number = va_arg(arg, int);
 
-	return (print_number_recursion(number, number >= 0));
+	return (print_number_recursion(number < 0 ? -number : number, number >= 0));
 }
