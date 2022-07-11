@@ -45,8 +45,8 @@ int print_binary_recursion(unsigned int number)
 	int length = 0;
 
 	if (number > 1)
-		length += print_binary(number / 2);
-	_putchar(n % 2 == 0 ? '0' : '1');
+		length += print_binary_recursion(number / 2);
+	_putchar(number % 2 == 0 ? '0' : '1');
 	length++;
 	return (length);
 }
@@ -57,5 +57,5 @@ int print_binary_recursion(unsigned int number)
  */
 int print_binary(va_list arg)
 {
-	return (print_binary_recursion(va_list(arg, int)));
+	return (print_binary_recursion(va_arg(arg, int)));
 }
