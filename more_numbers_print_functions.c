@@ -1,24 +1,27 @@
 #include "main.h"
 /**
+ * print_octal_recursion - Print an integer in octal base
+ * @number: Integer
+ * Return: Number priting length
+ */
+int print_octal_recursion(int number)
+{
+	int length = 0;
+
+	if (number > 7)
+		length += print_octal_recursion(number / 8);
+	_putchar(48 + (number % 8));
+	length++;
+	return (length);
+}
+/**
  * print_octal - Print an integer in octal base
  * @arg: Integer
  * Return: Number printing length
  */
 int print_octal(va_list arg)
 {
-	int number = va_arg(arg, int);
-	int octal_number = 0;
-	int i = 0;
-
-	for (i = 0; i < number; i++)
-	{
-		octal_number++;
-		if ((octal_number % 10) == 8)
-		{
-			octal_number += 2;
-		}
-	}
-	return (print_number_recursion(octal_number, 1));
+	return (print_octal_recursion(va_arg(arg, int)));
 }
 /**
  * print_hexadecimal - Print an integer in base hexadecimal
