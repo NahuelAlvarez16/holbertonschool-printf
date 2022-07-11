@@ -8,8 +8,9 @@ int print_octal(va_list arg)
 {
 	int number = va_arg(arg, int);
 	int octal_number = 0;
+	int i = 0;
 
-	for (int i = 0; i < number; i++)
+	for (i = 0; i < number; i++)
 	{
 		octal_number++;
 		if ((octal_number % 10) == 8)
@@ -29,7 +30,7 @@ int print_hexadecimal(int number, int uppercase)
 {
 	int length = 0;
 
-	for (; length < (number / 16) + 1; length)
+	for (; length < (number / 16) + 1; length++)
 	{
 		int result = number % 16;
 

@@ -57,7 +57,7 @@ int print_binary_recursion(unsigned int number)
  */
 int print_binary(va_list arg)
 {
-	return (print_binary_recursion(va_arig(arg, int)));
+	return (print_binary_recursion(va_arg(arg, int)));
 }
 /**
  * print_unsigned_integer - Print an unsigned integer
