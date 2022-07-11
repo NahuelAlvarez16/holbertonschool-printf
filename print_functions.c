@@ -47,7 +47,8 @@ int print_number_recursion(unsigned int number, int sign)
 		return (length + 1);
 	}
 	_putchar(number % 10 + '0');
-	return (1);
+	length++;
+	return (length);
 }
 /**
  * print_integer - prints an integer
@@ -60,3 +61,4 @@ int print_integer(va_list arg)
 
 	return (print_number_recursion(number < 0 ? -number : number, number >= 0));
 }
+
