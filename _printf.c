@@ -16,7 +16,7 @@ int (*get_print_function(char format))(va_list)
 	int i;
 
 	i = 0;
-	while (i < 4)
+	while (i < 5)
 	{
 		if (formats[i].format == format)
 			return (formats[i].print_function);
