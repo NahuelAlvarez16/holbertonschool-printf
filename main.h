@@ -12,5 +12,6 @@ int print_string(va_list arg);
 int print_char(va_list arg);
 int print_integer(va_list arg);
 int print_binary(va_list arg);
+int print_unsigned_integer(va_list arg);
 int _printf(const char *format, ...);
 #endif
