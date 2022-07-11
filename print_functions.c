@@ -26,27 +26,27 @@ int print_char(va_list arg)
 	return (1);
 }
 /**
- * print_number_recursion - print nu,ber
- * @s: int
- * Return: length
+ * print_number_recursion - print a number in recursion
+ * @number: Number to be printed
+ * @sign: 0 - @number is negative | 1 - @number is positive
+ * Return: Length
  */
-int print_number_recursion(int s)
+int print_number_recursion(unsigned int number, int sign)
 {
-	int i = 0;
+	int length = 0;
 
-	if (s / 10)
+	if (number / 10)
 	{
-		if (s < 0)
+		if (!sign)
 		{
 			_putchar('-');
-			i++;
-			s = -(s);
+			length++;
 		}
-		i += print_number_recursion(s / 10);
-		_putchar(s % 10 + '0');
-		return (i + 1);
+		length += print_number_recursion(number / 10, 1);
+		_putchar(number % 10 + '0');
+		return (length + 1);
 	}
-	_putchar(s % 10 + '0');
+	_putchar(number % 10 + '0');
 	return (1);
 }
 /**
@@ -56,5 +56,7 @@ int print_number_recursion(int s)
  */
 int print_integer(va_list arg)
 {
-	return (print_number_recursion(va_arg(arg, int)));
+	int number = va_arg(arg, int);
+
+	return (print_number_recursion(number, number >= 0));
 }
