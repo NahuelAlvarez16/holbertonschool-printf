@@ -1,30 +1,3 @@
-#include "main.h"
-/**
- * print_string - print all characters of arg variable
- * @arg:  string
- * Return: return length of arg variable
- */
-int print_string(va_list arg)
-{
-	int i;
-	char *src = va_arg(arg, char *);
-
-	if (!src)
-		src = "(null)";
-	for (i = 0; src && src[i]; i++)
-		_putchar(src[i]);
-	return (i);
-}
-/**
- * print_char - print a char
- * @arg: is a char
- * Return: 1
- */
-int print_char(va_list arg)
-{
-	_putchar(va_arg(arg, int));
-	return (1);
-}
 /**
  * print_number_recursion - print a number in recursion
  * @number: Number to be printed
@@ -61,4 +34,27 @@ int print_integer(va_list arg)
 
 	return (print_number_recursion(number < 0 ? -number : number, number >= 0));
 }
+/**
+ * print_binary_recursion - Convert a decimal number to binary and print it
+ * @number: Decimal number
+ * Return: Length of @number in binary
+ */
+int print_binary_recursion(unsigned int number)
+{
+	int length = 0;
 
+	if (number > 1)
+		length += print_binary(number / 2);
+	_putchar(n % 2 == 0 ? '0' : '1');
+	length++;
+	return (length);
+}
+/**
+ * print_binary - Convert a decimal number to binary and print it
+ * @arg: Decimal number
+ * Return: Length of @arg in binary
+ */
+int print_binary(va_list arg)
+{
+	return (print_binary_recursion(va_list(arg, int)));
+}

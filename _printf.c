@@ -11,6 +11,7 @@ int (*get_print_function(char format))(va_list)
 		{'s', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
+		{'b', print_binary}
 	};
 	int i;
 
