@@ -31,7 +31,7 @@ int print_octal(va_list arg)
  */
 int print_hexadecimal(unsigned int number, int uppercase)
 {
-	int length = 0;
+	unsigned int length = 0;
 
 	for (; length < (number / 16) + 1; length++)
 	{
