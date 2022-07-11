@@ -28,9 +28,10 @@ int print_char(va_list arg)
 /**
  * print_number_recursion - print nu,ber
  * @s: int
- * Return: length
+ * Return: lengt0h
+ * unsigned int.
  */
-unsigned int print_number_recursion(unsigned int s)
+unsigned int print_number_recursion(int s)
 {
 	int i = 0;
 

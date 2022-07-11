@@ -1,32 +1,33 @@
 #include "main.h"
 /**
- * get_print_function - relate a format to its function
- * @format: format
- * Return: return a print function
+ * get_print_function - Match chars with functions
+ * @c: A char value
+ * Return: A pointer to a function
  */
-int (*get_print_function(char format))(va_list)
+int (*get_print_function(char c))(va_list)
 {
-	format_t formats[] = {
+	printing_functions_t cases[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
+		{'b', print_binary}
 	};
 	int i;
 
 	i = 0;
-	while (i < 4)
+	while (i < 5)
 	{
-		if (formats[i].format == format)
-			return (formats[i].print_function);
+		if (cases[i].casee == c )
+			return (cases[i].f);
 		i++;
 	}
 	return (NULL);
 }
 /**
- * _printf - that produces output according to a format
- * @format: is a character string
- * Return: the number of characters printed
+ * _printf - Main program function
+ * @format: Character string
+ * Return: the number of printed characters
  */
 int _printf(const char *format, ...)
 {
