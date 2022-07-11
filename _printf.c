@@ -13,11 +13,12 @@ int (*get_print_function(char format))(va_list)
 		{'i', print_integer},
 		{'b', print_binary},
 		{'u', print_unsigned_integer},
+		{'o', print_octal},
 	};
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 7)
 	{
 		if (formats[i].format == format)
 			return (formats[i].print_function);
