@@ -9,6 +9,7 @@ int (*get_print_function(char c))(va_list)
 	printing_functions_t cases[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'S', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
 		{'b', print_binary},
