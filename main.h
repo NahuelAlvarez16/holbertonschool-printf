@@ -14,6 +14,8 @@ int print_integer(va_list arg);
 int print_binary(va_list arg);
 int print_unsigned_integer(va_list arg);
 int print_octal(va_list arg);
+int print_hexadecimal_uppercase(va_list arg);
+int print_hexadecimal_lowercase(va_list arg);
 int _printf(const char *format, ...);
 int print_number_recursion(unsigned int number, int sign);
 #endif

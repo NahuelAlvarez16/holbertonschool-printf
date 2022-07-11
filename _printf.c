@@ -14,11 +14,13 @@ int (*get_print_function(char format))(va_list)
 		{'b', print_binary},
 		{'u', print_unsigned_integer},
 		{'o', print_octal},
+		{'x', print_hexadecimal_lowercase},
+		{'X', print_hexadecimal_uppercase},
 	};
 	int i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 9)
 	{
 		if (formats[i].format == format)
 			return (formats[i].print_function);
