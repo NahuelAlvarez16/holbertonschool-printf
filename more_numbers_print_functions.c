@@ -4,7 +4,7 @@
  * @number: Integer
  * Return: Number priting length
  */
-int print_octal_recursion(int number)
+int print_octal_recursion(unsigned int number)
 {
 	int length = 0;
 
@@ -29,7 +29,7 @@ int print_octal(va_list arg)
  * @uppercase: 1 - Print in uppercase | 0 - Print in lowercase
  * Return: Number printing length
  */
-int print_hexadecimal(int number, int uppercase)
+int print_hexadecimal(unsigned int number, int uppercase)
 {
 	int length = 0;
 
