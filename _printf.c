@@ -11,12 +11,14 @@ int (*get_print_function(char c))(va_list)
 		{'s', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
-		{'b', print_binary}
+		{'b', print_binary},
+		{'u', print_unsigned_integer},
+		{'o', print_octal},
 	};
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 7)
 	{
 		if (cases[i].casee == c )
 			return (cases[i].f);
