@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_number_recursion - print a number in recursion
  * @number: Number to be printed
