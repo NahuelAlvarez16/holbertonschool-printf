@@ -30,7 +30,7 @@ int print_char(va_list arg)
  * @s: int
  * Return: length
  */
-int print_number_recursion(int s)
+unsigned int print_number_recursion(unsigned int s)
 {
 	int i = 0;
 
