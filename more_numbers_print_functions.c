@@ -31,18 +31,16 @@ int print_octal(va_list arg)
  */
 int print_hexadecimal(unsigned int number, int uppercase)
 {
-	unsigned int length = 0;
+	int length = 0;
+	int result = number % 16;
 
-	for (; length < (number / 16) + 1; length++)
-	{
-		int result = number % 16;
-
-		if (result < 10)
-			_putchar(48 + result);
-		else
-			_putchar((uppercase ? 55 : 87) + result);
-		number = number / 16;
-	}
+	if (number > 16)
+		length += print_hexadecimal(number / 16, uppercase);
+	if (result < 10)
+		_putchar(48 + result);
+	else
+		_putchar((uppercase ? 55 : 87) + result);
+	length++;
 	return (length);
 }
 /**
