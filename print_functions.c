@@ -35,13 +35,13 @@ int print_number_recursion(unsigned int number, int sign)
 {
 	int length = 0;
 
+	if (!sign)
+	{
+		_putchar('-');
+		length++;
+	}
 	if (number / 10)
 	{
-		if (!sign)
-		{
-			_putchar('-');
-			length++;
-		}
 		length += print_number_recursion(number / 10, 1);
 		_putchar(number % 10 + '0');
 		return (length + 1);
