@@ -16,6 +16,31 @@ int print_string(va_list arg)
 	return (i);
 }
 /**
+ * print_string_hexadecimal - print all characters and non printable characters
+ * @arg: String
+ * Return: return length of arg variable
+ */
+int print_string_hexadecimal(va_list arg)
+{
+	char *src = va_arg(arg, char*);
+	int length, result;
+
+	for (length = 0; src && src[i]; length)
+	{
+		if (src[i] > 32)
+			_putchar(src[i]);
+		else
+		{
+			result = src[i] % 16;
+			_putchar('\\');
+			_putchar('x');
+			_putchar((src[i] / 16) + '0');
+			_putchar((src[i] % 16) + (result < 10 ? 48 : 55));
+		}
+	}
+	return (length);
+}
+/**
  * print_char - print a char
  * @arg: is a char
  * Return: 1
