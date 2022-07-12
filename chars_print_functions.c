@@ -27,7 +27,7 @@ int print_string_hexadecimal(va_list arg)
 
 	for (i = 0; src && src[i]; i++, length++)
 	{
-		if (src[i] > 32 && src[i] < 127)
+		if (src[i] >= 32 && src[i] < 127)
 			_putchar(src[i]);
 		else
 		{
