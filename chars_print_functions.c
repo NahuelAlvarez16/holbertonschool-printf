@@ -35,7 +35,7 @@ int print_string_hexadecimal(va_list arg)
 			_putchar('\\');
 			_putchar('x');
 			_putchar((src[i] / 16) + '0');
-			_putchar((result + (result < 10 ? 48 : 55));
+			_putchar(result + (result < 10 ? 48 : 55));
 			length += 3;
 		}
 	}
