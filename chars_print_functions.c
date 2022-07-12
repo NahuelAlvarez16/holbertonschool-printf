@@ -25,17 +25,17 @@ int print_string_hexadecimal(va_list arg)
 	char *src = va_arg(arg, char*);
 	int length, result;
 
-	for (length = 0; src && src[i]; length)
+	for (length = 0; src && src[length]; length++)
 	{
-		if (src[i] > 32)
-			_putchar(src[i]);
+		if (src[length] > 32)
+			_putchar(src[length]);
 		else
 		{
-			result = src[i] % 16;
+			result = src[length] % 16;
 			_putchar('\\');
 			_putchar('x');
-			_putchar((src[i] / 16) + '0');
-			_putchar((src[i] % 16) + (result < 10 ? 48 : 55));
+			_putchar((src[length] / 16) + '0');
+			_putchar((src[length] % 16) + (result < 10 ? 48 : 55));
 		}
 	}
 	return (length);
