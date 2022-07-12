@@ -23,19 +23,20 @@ int print_string(va_list arg)
 int print_string_hexadecimal(va_list arg)
 {
 	char *src = va_arg(arg, char*);
-	int length, result;
+	int length = 0, result, i;
 
-	for (length = 0; src && src[length]; length++)
+	for (i = 0; src && src[i]; i++, length++)
 	{
-		if (src[length] > 32)
-			_putchar(src[length]);
+		if (src[i] > 32 && src[i] < 127)
+			_putchar(src[i]);
 		else
 		{
-			result = src[length] % 16;
+			result = src[i] % 16;
 			_putchar('\\');
 			_putchar('x');
-			_putchar((src[length] / 16) + '0');
-			_putchar((src[length] % 16) + (result < 10 ? 48 : 55));
+			_putchar((src[i] / 16) + '0');
+			_putchar((result + (result < 10 ? 48 : 55));
+			length += 3;
 		}
 	}
 	return (length);
